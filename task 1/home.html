@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        /* Reset some default styles */
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header and navigation menu */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(8, 7, 7, 0.1);
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-item {
+            margin: 0 20px;
+        }
+
+        .nav-item a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-item a:hover {
+            color: #ff9800;
+            transform: scale(1.1);
+        }
+
+        /* Scroll effect */
+        .navbar.scrolled {
+            background-color: #222;
+        }
+
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
+        }
+
+        /* Different section colors for visual separation */
+        #home {
+            background-color: #f4f4f4;
+        }
+
+        #about {
+            background-color: #e2e2e2;
+        }
+
+        #services {
+            background-color: #cccccc;
+        }
+
+        #contact {
+            background-color: #b3b3b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar" id="navbar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="#about">About</a></li>
+                <li class="nav-item"><a href="#services">Services</a></li>
+                <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Home</h1>
+        <p>Welcome to the home page.</p>
+    </section>
+    
+    <section id="about">
+        <h1>About Us</h1>
+        <p>
+            Welcome to our website! We are a passionate team dedicated to delivering exceptional services and solutions to our clients. 
+            With years of experience in our industry, we strive to innovate and lead in our field. Our mission is to provide quality 
+            and value, ensuring our clients achieve their goals and exceed their expectations. We believe in building strong relationships 
+            based on trust, integrity, and a commitment to excellence. Join us on our journey as we continue to grow and make a positive 
+            impact in our community and beyond.
+        </p>
+    </section>
+    
+    
+    <section id="services">
+        <h1>Services</h1>
+        <p>Details about services.</p>
+    </section>
+    
+    <section id="contact">
+        <h1>Contact</h1>
+        <p>customer services</p>
+    </section>
+
+    <script>
+        // Add scroll event listener to change navbar background color
+        document.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor="#000";
+                navbar.style.padding='5px';
+            } else {
+                navbar.style.backgroundColor="#575757";
+                navbar.style.padding='10px';
+            }
+        });
+    </script>
+</body>
+</html>
